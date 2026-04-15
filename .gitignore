@@ -21,6 +21,7 @@ envs/*sif
 .venv/
 venv/
 envs/requirements.txt
+*sif
 
 
 #python chace
