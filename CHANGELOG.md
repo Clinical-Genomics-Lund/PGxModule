@@ -1,6 +1,3 @@
-# v2.1.0
-- Updated Pharmcat Version to v3.2.0, which fixes a DYPD allele matcher bug 
-
 # v2.0.4
 - Corrected TMPT --> TPMT in the report header table
 
