@@ -24,7 +24,7 @@ process PHARMCAT_PREPROCESSING {
 
         cat <<-END_VERSIONS > versions.yml
         "${task.process}":
-            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor.py -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
+            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
         END_VERSIONS
         """
 
@@ -35,7 +35,7 @@ process PHARMCAT_PREPROCESSING {
 
         cat <<-END_VERSIONS > versions.yml
         "${task.process}":
-            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor.py -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
+            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
         END_VERSIONS
         """
 
