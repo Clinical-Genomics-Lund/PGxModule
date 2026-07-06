@@ -19,12 +19,12 @@ process PHARMCAT_PREPROCESSING {
         def args    = task.ext.args   ?: ''
         def prefix  = task.ext.prefix ?: "${meta.group}"
         """
-        pharmcat_vcf_preprocessor.py -vcf $vcf --base-filename ${prefix}.pharmcat $args
+        pharmcat_vcf_preprocessor -vcf $vcf --base-filename ${prefix}.pharmcat $args
         gunzip -c ${prefix}.pharmcat.preprocessed.vcf.bgz > ${prefix}.pharmcat.preprocessed.vcf
 
         cat <<-END_VERSIONS > versions.yml
         "${task.process}":
-            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor.py -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
+            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
         END_VERSIONS
         """
 
@@ -35,7 +35,7 @@ process PHARMCAT_PREPROCESSING {
 
         cat <<-END_VERSIONS > versions.yml
         "${task.process}":
-            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor.py -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
+            pharmcat_vcf_preprocessor: \$(pharmcat_vcf_preprocessor -V 2>&1 | sed -e 's/PharmCAT VCF Preprocessor //g')
         END_VERSIONS
         """
 
